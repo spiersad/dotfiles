@@ -2,6 +2,7 @@
 set encoding=utf-8
 colo delek
 syntax on
+let python_highlight_all=1
 
 " Enable line numbers
 set number
@@ -40,6 +41,8 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'bitc/vim-bad-whitespace'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
