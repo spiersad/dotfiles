@@ -2,16 +2,11 @@ call plug#begin('~/.vim/plugged')
 
 " UI related
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " syntax check
-" Plug 'scrooloose/syntastic'
+Plug 'dense-analysis/ale'
 " Autocomplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -51,3 +46,7 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Theme
 syntax enable
+
+" ALE
+let g:ale_sign_column_always = 1
+let g:airline#extensions#ale#enabled = 1
